@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About | Adventure</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        /* background: linear-gradient(135deg, #f7f8f8, #a5dfec); */
+         background: linear-gradient(135deg, #fafbfb, #84f1ed);
+        /* background: rgba(255, 255, 255, 0.2); */
+        /* background-color: rgb(140, 147, 147); */
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      nav {
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        background: rgba(14, 13, 13);
+        /* backdrop-filter: blur(10px); */
+      }
+
+      nav .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #86ebff;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 120px;
+        padding: 40px;
+      }
+
+      .about-container {
+        display: flex;
+        background: rgb(13, 95, 107);
+        /* background: rgb(22, 130, 149); */
+        /* background: rgba(221, 217, 217); */
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        max-width: 1200px;
+        width: 100%;
+        height: 450px;
+        flex-wrap: wrap;
+      }
+
+      .about-content {
+        flex: 1;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .about-content h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .about-content p {
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 500;
+        color: #ffffff;
+      }
+
+      .about-image {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .about-image img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 20px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px 0;
+        font-size: 14px;
+        color: #ccc;
+        background: rgba(0, 0, 0);
+      }
+
+      @media (max-width: 768px) {
+        .about-container {
+          flex-direction: column;
+          text-align: center;
+        }
+        .about-content,
+        .about-image {
+          padding: 20px;
+        }
+      }
+      /* h1{
+    color: #595656;
+} */
+ .explore-button {
+  margin-top: 20px;
+  padding: 12px 10px;
+  background-color: #eeeeee;
+  color: rgb(25, 127, 133);
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.explore-button:hover {
+  background-color: #010101;
+  color: white;
+  transform: scale(1.05);
+}
+
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="#" class="logo">Adventure</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Attractions/Attractions.html">Attraction</a></li>
+        <!-- <li><a href="service.html">Service</a></li> -->
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- <li><a href="#">Pages ▾</a></li> -->
+      </ul>
+    </nav>
+
+    <main>
+      <div class="about-container">
+       <div class="about-content">
+  <h1>About Us</h1>
+  <p>
+    At Adventure, we believe life is a daring journey meant to be lived
+    fully. Our mission is to ignite your passion for exploration and
+    help you discover the world's endless wonders. From breathtaking
+    landscapes to unforgettable experiences, we craft adventures that
+    inspire courage, creativity, and connection. Join us as we create
+    memories that will last a lifetime.
+  </p>
+  <a href="Attractions/Attractions.html" class="explore-button">Explore Now</a>
+</div>
+
+        <div class="about-image">
+          <img src="images/about.jpeg" alt="Adventure Image" />
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Adventure | All rights reserved</p>
+    </footer>
+  </body>
+</html>

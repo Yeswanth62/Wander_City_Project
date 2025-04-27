@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Your Hostel | Adventure</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      /* background: linear-gradient(135deg, #fafbfb, #84f1ed); */
+       background: linear-gradient(135deg, #fafbfb, #84f1ed);
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-side {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      position: relative;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      overflow: hidden;
+    }
+
+    .left-side img {
+      width: 80%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      object-fit: cover;
+    }
+
+    .right-side {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: #0d0e0e;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input, select, button {
+      padding: 12px 16px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #63f5ff;
+    }
+
+    button {
+      background: #0d0e0e;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #63f5ff;
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-side {
+        height: 40vh;
+        border-radius: 0;
+      }
+
+      .left-side img {
+        width: 70%;
+        height: auto;
+      }
+
+      .right-side {
+        height: 60vh;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="left-side">
+      <img src="images/hotel1.jpeg" alt="Hostel Image">
+    </div>
+    <div class="right-side">
+      <h1>Book Your Stay</h1>
+      <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="date" placeholder="Check-in Date" required>
+        <input type="date" placeholder="Check-out Date" required>
+        <select required>
+          <option value="" disabled selected>Number of Guests</option>
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+        </select>
+        <button type="submit">Book Now</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

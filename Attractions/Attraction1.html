@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attractions | Adventure</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fafbfb, #84f1ed);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(14, 13, 13, 0.8);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 300;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #86ebff;
+    }
+
+    main {
+      flex: 1;
+      padding: 80px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      /* margin-top: 20px; */
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .attractions-container {
+      max-width: 1200px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.3s;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+      background-color: #f3e8ff;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 400;
+      color: #333;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #ccc;
+      background: rgba(0, 0, 0, 0.8);
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .attractions-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    a{
+        text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="logo">Adventure</a>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../About.html">About</a></li>
+      <li><a href="Attractions.html">Attractions</a></li>
+      <li><a href="../Gallery.html">Gallery</a></li>
+      <li><a href="../Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Top Attractions</h1>
+    <div class="attractions-container">
+
+      <a href="../Hotel.html" class="card-link">
+  <div class="card">
+    <img src="../images/img1.avif" alt="Mountain View">
+    <h3>Mountain View</h3>
+  </div>
+</a>
+
+
+      <div class="card">
+        <img src="../images/img2.avif" alt="Sunny Beach">
+        <h3>Sunny Beach</h3>
+      </div>
+
+      <div class="card">
+        <img src="../images/img3.avif" alt="Historic Castle">
+        <h3>Historic Castle</h3>
+      </div>
+
+      <div class="card">
+        <img src="../images/img4.avif" alt="City Lights">
+        <h3>City Lights</h3>
+      </div>
+
+      <div class="card">
+        <img src="../images/img5.webp" alt="Tropical Forest">
+        <h3>Tropical Forest</h3>
+      </div>
+
+      <div class="card">
+        <img src="../images/img6.webp" alt="Desert Adventure">
+        <h3>Desert Adventure</h3>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Adventure | All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
+

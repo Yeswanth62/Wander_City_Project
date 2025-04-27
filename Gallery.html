@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery | CityName</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+   body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fafbfb, #84f1ed);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      height: 90px; 
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(14, 13, 13, 0.9);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: color 0.3s;
+      margin-left: 20px;
+    }
+
+    nav ul li a:hover {
+      color: #86ebff;
+    }
+
+    main {
+      flex: 1;
+      margin-top: 30px;
+      padding: 90px 40px 40px; /* 90px matches nav height + some breathing room */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* h1 {
+      margin-bottom: 20px;
+      font-size: 40px;
+      font-weight: bolder;
+      color: #000000;
+    } */
+    h1 {
+      font-size: 48px;
+      /* margin-bottom: 40px; */
+        /* font-weight: bolder; */
+      color: #fff;
+    }
+
+    /* .gallery-scroll-container {
+      overflow-x: auto;
+      overflow-y: hidden;
+      width: 100%;
+      cursor: grab;
+      scroll-behavior: smooth;
+    } */
+.gallery-scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: 100%;
+  cursor: grab;
+  scroll-behavior: smooth;
+  
+  /* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.gallery-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+    .gallery-grid {
+      display: flex;
+      gap: 16px;
+      padding: 20px 0;
+    }
+
+    .gallery-grid img {
+      width: 350px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .dragging {
+      cursor: grabbing;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #030303;
+      font-size: 14px;
+      color: #cfcfcf;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: rgba(14, 13, 13, 0.95);
+        padding: 10px;
+        border-radius: 8px;
+      }
+
+      .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .gallery-grid img {
+        width: 90%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="logo">Adventure</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="Attractions/Attractions.html">Attractions</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>City Gallery</h1>
+    <div class="gallery-scroll-container" id="scrollContainer">
+      <div class="gallery-grid">
+        <img src="images/famousTour.jpeg" alt="View 1">
+        <img src="images/gallery1.jpeg" alt="View 2">
+        <img src="images/gallery10.jpeg" alt="View 3">
+        <img src="images/gallery3.jpeg" alt="View 4">
+        <img src="images/gallery4.jpeg" alt="View 5">
+        <img src="images/gallery5.jpeg" alt="View 6">
+        <img src="images/gallery6.jpeg" alt="View 7">
+        <img src="images/gallery9.jpeg" alt="View 8">
+        <img src="images/gallery7.jpeg" alt="View 9">
+        <img src="images/gallery8.jpeg" alt="View 10">
+        <img src="images/gallery13.jpeg" alt="View 11">
+        <img src="images/gallery2.webp" alt="View 12">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CityName</p>
+  </footer>
+
+  <script>
+    const container = document.getElementById('scrollContainer');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    container.addEventListener('mousedown', (e) => {
+      isDown = true;
+      container.classList.add('dragging');
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('mouseleave', () => {
+      isDown = false;
+      container.classList.remove('dragging');
+    });
+
+    container.addEventListener('mouseup', () => {
+      isDown = false;
+      container.classList.remove('dragging');
+    });
+
+    container.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      container.scrollLeft = scrollLeft - walk;
+    });
+
+    container.addEventListener('touchstart', (e) => {
+      isDown = true;
+      startX = e.touches[0].pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+    });
+
+    container.addEventListener('touchend', () => {
+      isDown = false;
+    });
+
+    container.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      const x = e.touches[0].pageX - container.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      container.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+
+</body>
+</html>
